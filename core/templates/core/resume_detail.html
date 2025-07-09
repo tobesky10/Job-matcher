@@ -1,0 +1,17 @@
+{% extends "core/index.html" %}
+{% block content %}
+  <h2>Resume: {{ resume.user.username }}</h2>
+  <div class="resume-section">
+    <h4>Experience</h4>
+    <p>{{ resume.experience|linebreaks }}</p>
+    <h4>Education</h4>
+    <p>{{ resume.education|linebreaks }}</p>
+    <h4>Skills</h4>
+    <ul>
+      {% for skill in resume.skills.all %}
+        <li>{{ skill.name }}</li>
+      {% endfor %}
+    </ul>
+    <!-- Add more fields as needed -->
+  </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+Job Title: Senior Software Engineer
+
+Company: Innovative Tech Solutions
+
+Location: Remote
+
+Employment Dates: March 2021 – Present
+
+Job Description:
+We are looking for a Senior Software Engineer with expertise in full-stack development and cloud computing.
+
+The ideal candidate will lead development teams, design scalable microservices architectures, and implement CI/CD pipelines.
+
+Experience with AWS, Docker, Kubernetes, and RESTful APIs is required.
+Strong debugging and pattern matching skills are a plus.
+
+Responsibilities:
+
+Develop and maintain web applications using Java, Python, and React.
+
+Design and deploy cloud-native applications on AWS.
+
+Collaborate with cross-functional teams to define technical requirements.
+
+Mentor junior developers and conduct code reviews.
+
+Troubleshoot and debug complex software issues using print statements, JSON validation, and error handling.
+
+Qualifications:
+
+Bachelor's degree in Computer Science or related field.
+
+5+ years of software development experience.
+
+Proficient in API testing and REST client tools.
+
+Familiarity with token patterns, string manipulation, and regular expressions.

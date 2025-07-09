@@ -1,0 +1,26 @@
+{% extends "core/index.html" %}
+{% block content %}
+  <h2>Parse Job Posting</h2>
+  {% if messages %}
+    <div class="alert">
+      {% for message in messages %}
+        <div class="{% if message.tags %}{{ message.tags }}{% endif %}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div>
+      <label for="job_text">Paste Job Description:</label>
+      <textarea id="job_text" name="job_text" rows="10"></textarea>
+    </div>
+    <div style="margin: 20px 0; text-align: center; font-weight: bold">OR</div>
+    <div>
+      <label for="job_file">Upload Job Description File:</label>
+      <input type="file" id="job_file" name="job_file">
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin-top: 20px">Upload</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "core/index.html" %}
+{% block content %}
+  <h2>Job Posting: {{ job.title }}</h2>
+  <div class="job-section">
+    <p><strong>Company:</strong> {{ job.company.name }}</p>
+    <p><strong>Location:</strong> {{ job.location }}</p>
+    <h4>Description</h4>
+    <p>{{ job.description|linebreaks }}</p>
+    <h4>Required Skills</h4>
+    <ul>
+      {% for skill in job.skills.all %}
+        <li>{{ skill.name }}</li>
+      {% endfor %}
+    </ul>
+    <!-- Add more fields as needed -->
+  </div>
+{% endblock %}

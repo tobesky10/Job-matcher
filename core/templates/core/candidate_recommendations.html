@@ -1,0 +1,35 @@
+{% extends "core/index.html" %}
+{% block content %}
+  <h2>Candidate Recommendations for {{ job.title }} at {{ job.company.name }}</h2>
+  <p><strong>Location:</strong> {{ job.location }}</p>
+  <p><strong>Description:</strong> {{ job.description|truncatechars:300 }}</p>
+  {% if matches %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Candidate Username</th>
+          <th>Similarity Score</th>
+          <th>Skills</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for candidate in matches %}
+          <tr><a href="{% url 'resume_detail' candidate.id %}"></a>
+            <td>{{ candidate.user }}</td>
+            <td>{{ candidate.similarity }}</td>
+            <td>
+              <ul>
+                {% for skill in candidate.skills %}
+                  <li>{{ skill }}</li>
+                {% endfor %}
+              </ul>
+            </td></a>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p class="alert alert-info">No matching candidates found with similarity above the threshold.</p>
+  {% endif %}
+  <a href="{% url 'Home' %}" class="btn">Back to Job Listings</a>
+{% endblock %}

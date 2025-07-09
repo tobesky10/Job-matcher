@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Job Matcher</title>
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-flex">
+      <div class="logo">
+        <span class="logo-icon">🔎</span>
+        <span class="logo-text">Job Matcher</span>
+      </div>
+      <nav>
+        <a href="{% url 'Index' %}">Home</a>
+        <a href="{% url 'upload_resume' %}">Upload Resume</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Dynamic Content -->
+    <section class="content-section">
+      <div class="container">
+        {% block content %}
+        <!-- Child templates will inject content here -->
+        {% endblock %}
+      </div>
+    </section>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-content">
+        <div>
+          <h1>Find Your Perfect Job Match</h1>
+          <p>
+            Upload your resume or browse job postings. Our AI-powered matcher connects your skills and experience to the best opportunities.
+          </p>
+          <a href="{% url 'upload_resume' %}" class="btn btn-primary">Get Started</a>
+        </div>
+        <div class="hero-image">
+          <img src="{% static 'images/hero-job-matcher.png' %}" alt="Job Matcher Illustration" />
+        </div>
+      </div>
+    </section>
+
+    <!-- About/Project Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2>About Job Matcher</h2>
+        <p>
+          <strong>Job Matcher</strong> is a smart recruitment platform that leverages advanced Natural Language Processing (NLP) to analyze resumes and job descriptions, providing highly relevant matches for both candidates and employers.
+        </p>
+        <ul class="features-list">
+          <li>🔍 <b>Semantic Matching:</b> Goes beyond keywords to understand your true skills and experience.</li>
+          <li>⚡ <b>Instant Recommendations:</b> Get job or candidate matches as soon as you upload.</li>
+          <li>🔒 <b>Privacy First:</b> Your data is secure and never shared without your consent.</li>
+        </ul>
+      </div>
+    </section>
+
+    
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Job Matcher. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
